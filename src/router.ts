@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import Hi from './components/Hi.vue';
 import ContactPage from './components/ContactPage.vue';
 
@@ -8,7 +8,7 @@ const routes = [
   ];
 
 const router = createRouter({
-    history: createWebHistory(), // Uses browser history mode
+    history: createWebHashHistory(), // Uses browser history mode
     routes,
 });
 
