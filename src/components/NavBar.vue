@@ -2,10 +2,6 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios';
 
-defineProps<{ 
-  msg: string
- }>()
-
 const profileUrl = 'https://github.com/joselopez117';
 const username = 'joselopez117';  // Replace with your GitHub username
 const avatarUrl = ref<string | null>(null);
