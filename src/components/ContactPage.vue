@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import axios from 'axios';
 import FidgetButton from './FidgetButton.vue';
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 interface ResponseObject {
     firstName : string,
