@@ -1,13 +1,25 @@
 <script setup lang="ts">
 import axios from 'axios';
 import FidgetButton from './FidgetButton.vue';
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
+
+interface ResponseObject {
+    firstName : string,
+    nickName : string,
+    email : string,
+    message : string,
+}
 
 const firstName = ref('');
 const nickName = ref('');
 const email = ref('');
 const message = ref('');
-
+let responseBody: ResponseObject = {
+    firstName: '',
+    nickName: '',
+    email: '',
+    message: '',
+};
 function deliverVistorInfo() {
     if(firstName.value != '' && nickName.value != '' && email.value != '' && message.value != ''){
         const body = {
@@ -30,6 +42,10 @@ function deliverVistorInfo() {
                 {headers}
             ) 
             .then(response => {
+                responseBody.firstName = response.data.receivedData.firstName;
+                responseBody.nickName = response.data.receivedData.nickName;
+                responseBody.email = response.data.receivedData.email;
+                responseBody.message = response.data.receivedData.message;
                 console.log(response);
             }).catch(response => {
                 console.log(response);
@@ -61,6 +77,9 @@ function deliverVistorInfo() {
             <textarea id="message" name="message" v-model="message" class="msg-area"></textarea><br>
             <input type="submit" value="Submit" @click="deliverVistorInfo">
         </form>
+    </div>
+    <div>
+        {{ responseBody }}
     </div>
     <div class="text-parent">
         <div>Pardon the dust!</div>
