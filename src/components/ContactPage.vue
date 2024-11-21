@@ -7,7 +7,6 @@ const firstName = ref('');
 const nickName = ref('');
 const email = ref('');
 const message = ref('');
-const returnMessage = ref('Test');
 
 function deliverVistorInfo() {
     if(firstName.value != '' && nickName.value != '' && email.value != '' && message.value != ''){
@@ -77,8 +76,6 @@ function deliverVistorInfo() {
         <br/>
         <FidgetButton />
     </div>
-    <button @click="button">Test button</button>
-    <div>{{ returnMessage }}</div>
 </template>
 
 <style scoped lang="scss">
