@@ -32,15 +32,10 @@ function deliverVistorInfo() {
             'id': count.value //TODO: id should be generated in backend
         }
 
-        const headers = {
-            'Access-Control-Request-Method': 'POST',
-        };
-
         return axios
             .post(
                 'https://api.joselopez117.com/data', 
                 body,
-                {headers}
             ) 
             .then(response => {
                 responseBody.Name = response.data.Name;
