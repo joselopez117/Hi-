@@ -34,7 +34,7 @@ function deliverVistorInfo() {
 
         return axios
             .post(
-                'https://api.joselopez117.com/data', 
+                'https://api.joselopez117.com/data/submit', 
                 body,
             ) 
             .then(response => {
