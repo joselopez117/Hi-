@@ -5,7 +5,7 @@ const count = ref(0);
 
 <template>
   <div class="card">
-        <button type="button" @click="count++">Fidget Button count: {{ count }}</button>
+        <button type="button" @click="count++" class="figet-button">Fidget Button count: {{ count }}</button>
         <div v-if="count >= 50 && count < 100">Nice</div>
         <div v-if="count >= 100 && count < 200">Good job!</div>
         <div v-if="count >= 200">I appreciate the clicks, remember to spend your time wisely!</div>
@@ -14,4 +14,7 @@ const count = ref(0);
 </template>
 
 <style scoped lang="scss">
+.figet-button {
+  touch-action: manipulation 
+}
 </style>

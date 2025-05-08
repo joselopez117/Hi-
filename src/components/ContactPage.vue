@@ -4,56 +4,56 @@ import FidgetButton from './FidgetButton.vue';
 import { ref } from 'vue';
 
 interface ResponseObject {
-    firstName : string,
-    nickName : string,
-    email : string,
+    Name : string,
+    // email : string, //TODO: to be added back in at some point
     message : string,
+    serverMessage: string,
+    id: number, //TODO: id should be generated in backend
 }
 
-const firstName = ref('');
-const nickName = ref('');
-const email = ref('');
+const name = ref('');
+// const email = ref('');
 const message = ref('');
+const count = ref(0);
 let responseBody: ResponseObject = {
-    firstName: '',
-    nickName: '',
-    email: '',
+    Name: '',
+    // email: '',
     message: '',
+    serverMessage: '',
+    id: 0,//TODO: id should be generated in backend
 };
-function deliverVistorInfo() {
-    if(firstName.value != '' && nickName.value != '' && email.value != '' && message.value != ''){
+
+function deliverVistorInfo() {  
+    if(name.value != '' && message.value != ''){
         const body = {
-            'firstName' : firstName.value,
-            'nickName' : nickName.value,
-            'email' : email.value,
+            'name' : name.value,
+            // 'email' : email.value, //TODO: add this back in at some point
             'message' : message.value,
+            'id': count.value //TODO: id should be generated in backend
         }
 
         const headers = {
             'Access-Control-Request-Method': 'POST',
-            'Access-Control-Request-Headers': 'Content-Type',
-            'x-api-key': 'xBX3CmhSvy1r1vM1EmSzY834dXSgni3o2SgCnISX', 
         };
 
         return axios
             .post(
-                'https://u74t4kighc.execute-api.us-east-2.amazonaws.com/prod', 
+                'https://api.joselopez117.com/data', 
                 body,
                 {headers}
             ) 
             .then(response => {
-                responseBody.firstName = response.data.receivedData.firstName;
-                responseBody.nickName = response.data.receivedData.nickName;
-                responseBody.email = response.data.receivedData.email;
-                responseBody.message = response.data.receivedData.message;
-                console.log(response);
+                responseBody.Name = response.data.Name;
+                //responseBody.email = response.data.email; //TODO: add this back in at some point 
+                responseBody.message = response.data.Message;
+                responseBody.id = response.data.Id;
+                responseBody.serverMessage = response.data.ServerMessage;
             }).catch(response => {
                 console.log(response);
             }).finally(() => {
-                firstName.value = '';
-                nickName.value = '';
-                email.value = '';
-                message.value = '';
+                name.value = '';
+                // email.value = '';
+                message.value = '';//TODO: finally may not be needed
             });
     }
 }
@@ -63,15 +63,8 @@ function deliverVistorInfo() {
 <template>
     <div class="contact-form">
         <form class="form-data" @submit.prevent>
-            <label for="fname">First name:</label>
-            <input type="text" id="fname" name="fname" v-model="firstName"><br>
-
-            <label for="nickname">Nickname:</label>
-            <input type="text" id="lname" name="lname" v-model="nickName"><br>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" v-model="email"><br>
-
+            <label for="name">First name:</label>
+            <input type="text" id="name" name="name" v-model="name"><br>
             <!-- TODO: add message box here for users to send a message to me -->
             <label for="message">Message:</label>
             <textarea id="message" name="message" v-model="message" class="msg-area"></textarea><br>
