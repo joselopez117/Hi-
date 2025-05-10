@@ -34,7 +34,7 @@ function deliverVistorInfo() {
 
         return axios
             .post(
-                'https://api.joselopez117.com/data/submit', 
+                'https://api.joselopez117.com/data/contact', 
                 body,
             ) 
             .then(response => {
@@ -42,7 +42,7 @@ function deliverVistorInfo() {
                 //responseBody.email = response.data.email; //TODO: add this back in at some point 
                 responseBody.message = response.data.Message;
                 responseBody.id = response.data.Id;
-                responseBody.serverMessage = response.data.ServerMessage;
+                //responseBody.serverMessage = response.data.ServerMessage;
             }).catch(response => {
                 console.log(response);
             }).finally(() => {
