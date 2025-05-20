@@ -43,7 +43,7 @@ onMounted(async () => {
 
 <style scoped lang="scss">
 nav {
-    width: 80vw;    
+    width: 100%;    
 }
 
 div {
@@ -71,6 +71,6 @@ nav ul {
 
 .active-link {
   font-weight: bold;
-  color: blue;
+  color: #D8B737;
 }
 </style>

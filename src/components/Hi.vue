@@ -18,16 +18,36 @@ const projects = ref('Projects');
     <h1>{{ hiMsg }}</h1>
     <h2>{{ aspirationalRoles }}</h2>
     <h2>{{ aboutMe }}</h2>
-    <div>{{ welcomeMsg }}</div>
+    <div class="parent-text__welcomeMsg">{{ welcomeMsg }}</div>
     <h2>{{ projects }}</h2>
     
     <FidgetButton />
   </div>
+  <a class="image-credit" href="https://stocksnap.io/author/44934">Image credit: Etienne Boulanger</a>
 </template>
 
 <style scoped lang="scss">
   .parent-text {
-    text-align: left;
-    max-width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 45rem;
+    width: 100%;
+    background-image: url("src/assets/StockSnap_1N5RXUYKDW.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 1rem;
+  }
+
+  .parent-text__welcomeMsg {
+    width: 33%;
+  }
+
+  .image-credit {
+    display: flex;
+    justify-content: right;
   }
 </style>

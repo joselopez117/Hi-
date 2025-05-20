@@ -26,54 +26,80 @@ function deliverVistorInfo() {
                 if(response){
                     responseReturned.value = "Message sent!" 
                 }
-            }).catch(response => {
-                // console.log(response);
             })
     }
 }
 </script>
 
 <template>
-    <div class="contact-form">
-        <form class="form-data" @submit.prevent>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" v-model="name"><br>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" v-model="message" class="msg-area"></textarea><br>
-            <input type="submit" value="Submit" @click="deliverVistorInfo">
-        </form>
+    <div class="parent">
+        <div class="contact-form">
+            <form class="form-data" @submit.prevent>
+                <label for="name" class="label">Name:</label>
+                <input type="text" id="name" name="name" v-model="name"><br>
+                <label for="message" class="label">Message:</label>
+                <textarea id="message" name="message" v-model="message" class="msg-area"></textarea><br>
+                <input type="submit" value="Submit" @click="deliverVistorInfo">
+            </form>
+        </div>
+        <div class="text-parent">
+            <a href="https://github.com/joselopez117">Github</a>
+            <br/>
+            <span>You can also click the picture on the top right!</span>
+            <br/>
+            <a href="mailto:joselopez177@gmail.com">Email</a>
+            <br/>
+            <a href="https://www.linkedin.com/in/josemartinlopez/">LinkedIn</a>
+            <br/>
+            <FidgetButton />
+        </div>
     </div>
-    <div class="text-parent">
-        <a href="https://github.com/joselopez117">Github</a>
-        <br/>
-        <span>You can also click the picture on the top right!</span>
-        <br/>
-        <a href="mailto:joselopez177@gmail.com">Email</a>
-        <br/>
-        <a href="https://www.linkedin.com/in/josemartinlopez/">LinkedIn</a>
-        <br/>
-        <FidgetButton />
-    </div>
+    <a class="image-credit" href="https://stocksnap.io/author/freenaturestock">Image credit: Free Nature Stock</a>
 </template>
 
 <style scoped lang="scss">
+    .parent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height:45rem;
+        width: 100%;
+        background-image: url("src/assets/StockSnap_8UPLJEGABH.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        border-radius: 1rem;
+    }
     .text-parent {
-        text-align: left;
+        text-align: center;
     }
     .contact-form {
-        background-color: gray;
-        border-radius: 5%;
         display: flex;
-        flex-direction: row;
-        width: 33%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 90%;
+        width: 100%;
     }
     .form-data {
-        width: 33%;
+        width: 100%;
         text-align: left;
-        margin-left: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .label {
+        padding: 5%;      
     }
     .msg-area {
-        max-width: 10rem;
+        background-color: #1D3A63;
+        max-width: 100%;
         resize: vertical;
+    }
+    .image-credit {
+        display: flex;
+        justify-content: right;
     }
 </style>
