@@ -22,18 +22,19 @@ onMounted(async () => {
     <nav>
         <!-- TODO: If we have more divs here, make a class for this div -->
         <div>
-            <RouterLink to="/" active-class="home-page">Joselopez117</RouterLink>
+            <!-- <RouterLink to="/" active-class="home-page">Joselopez117</RouterLink> -->
+            <a :href="profileUrl" target="_blank" v-if="avatarUrl">
+                <img :src="avatarUrl" alt="GitHub Avatar" class="avatar" />
+            </a>
             <ul>
                 <li>
                     <router-link to="/" active-class="active-link">Hi!</router-link>
                 </li>
                 <li>
-                    <router-link to="/contact" active-class="active-link">Contact</router-link>
+                    <router-link to="/projects" active-class="active-link">Projects</router-link>
                 </li>
                 <li>
-                    <a :href="profileUrl" target="_blank" v-if="avatarUrl">
-                        <img :src="avatarUrl" alt="GitHub Avatar" class="avatar" />
-                    </a>
+                    <router-link to="/contact" active-class="active-link">Contact</router-link>
                 </li>
                 <!-- TODO: More to come... -->
             </ul>

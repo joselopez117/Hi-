@@ -43,7 +43,7 @@ const projects = ref('Projects');
   }
 
   .parent-text__welcomeMsg {
-    width: 33%;
+    max-width: 33%;
   }
 
   .image-credit {
