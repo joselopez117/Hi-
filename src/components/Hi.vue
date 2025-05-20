@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import imagePath from '@/assets/StockSnap_1N5RXUYKDW.jpg';
 import { ref } from 'vue'
 import FidgetButton from './FidgetButton.vue'
 
@@ -14,7 +15,7 @@ const projects = ref('Projects');
 </script>
 
 <template>
-  <div class="parent-text">
+  <div class="parent-text" :style="{ 'background-image': `url(${imagePath})`}">
     <h1>{{ hiMsg }}</h1>
     <h2>{{ aspirationalRoles }}</h2>
     <h2>{{ aboutMe }}</h2>
@@ -35,7 +36,6 @@ const projects = ref('Projects');
     text-align: center;
     height: 45rem;
     width: 100%;
-    background-image: url("src/assets/StockSnap_1N5RXUYKDW.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import axios from 'axios';
+import imagePath from '@/assets/StockSnap_8UPLJEGABH.jpg';
 import FidgetButton from './FidgetButton.vue';
 import { ref } from 'vue';
 
@@ -32,7 +33,7 @@ function deliverVistorInfo() {
 </script>
 
 <template>
-    <div class="parent">
+    <div class="parent" :style="{ 'background-image': `url(${imagePath})`}">
         <div class="contact-form">
             <form class="form-data" @submit.prevent>
                 <label for="name" class="label">Name:</label>
@@ -66,7 +67,6 @@ function deliverVistorInfo() {
         text-align: center;
         height:45rem;
         width: 100%;
-        background-image: url("src/assets/StockSnap_8UPLJEGABH.jpg");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
