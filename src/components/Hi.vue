@@ -28,26 +28,46 @@ const projects = ref('Projects');
 </template>
 
 <style scoped lang="scss">
-  .parent-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 45rem;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    border-radius: 1rem;
+.parent-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem 1rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 1rem;
+
+  h1, h2, .parent-text__welcomeMsg {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
   }
 
   .parent-text__welcomeMsg {
-    max-width: 33%;
+    max-width: 700px;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1rem;
+    box-sizing: border-box;
   }
+}
 
-  .image-credit {
-    display: flex;
-    justify-content: right;
-  }
+.image-credit {
+  display: flex;
+  justify-content: right;
+}
 </style>

@@ -40,10 +40,14 @@ function deliverVistorInfo() {
         <div class="contact-form">
             <h1>Let's chat!</h1>
             <form class="form-data" @submit.prevent>
-                <label for="name" class="label">Name:</label>
-                <input class ="form-data__name"type="text" id="name" name="name" v-model="name"><br>
-                <label for="message" class="label">Message:</label>
-                <textarea class="form-data__msg-area" id="message" name="message" v-model="message"></textarea><br>
+                <div class="form-data__container">
+                    <label for="name" class="label">Name:</label>
+                    <input class ="form-data__name"type="text" id="name" name="name" v-model="name"><br>
+                </div>
+                <div class="form-data__container">
+                    <label for="message" class="label">Message:</label>
+                    <textarea class="form-data__msg-area" id="message" name="message" v-model="message"></textarea><br>
+                </div>
                 <input class="form-data__submit" type="submit" value="Submit" @click="deliverVistorInfo">
             </form>
         </div>
@@ -59,88 +63,96 @@ function deliverVistorInfo() {
 </template>
 
 <style scoped lang="scss">
-    .parent {
+.parent {
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form-data {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+    align-items: stretch;
+
+    &__container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height:45rem;
-        width: 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        border-radius: 1rem;
-    }
-    .text-parent {
-        text-align: center;
-    }
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 90%;
+        align-items: flex-start;
         width: 100%;
     }
+
+    &__name {
+        width: 100%;
+        max-width: 100%;
+        padding: 0.5rem;
+        border: 2px solid #000;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+    }
+
+    &__msg-area {
+        width: 100%;
+        min-height: 150px;
+        padding: 0.75rem;
+        box-sizing: border-box;
+        border: 2px solid #000;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        resize: vertical;
+    }
+
+    &__submit {
+        align-self: flex-start;
+        margin-top: 1rem;
+        background-color: #6B7D7A;
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.6em 1.2em;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.5s ease;
+    }
+
+    &__submit:hover {
+        background-color: #D8B737;
+        color: black;
+    }
+}
+
+.label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
     .form-data {
+        padding: 1rem;
+    }
+
+    .form-data__msg-area {
+        min-height: 120px;
+    }
+
+    .form-data__submit {
         width: 100%;
         text-align: center;
-        padding-left: 5%;
-        padding-right: 5%;
-
-        &__name{
-            height: 2rem;
-            width: 20rem;
-            border: 2px solid #000000;
-            border-radius: 0.5rem;
-        }
-
-        &__name:hover {
-            border-color: #D8B737;
-        }
-
-        &__msg-area {
-            max-width: 50%;
-            width: 50%;
-            height: 150px;
-            padding: 12px 20px;
-            box-sizing: border-box;
-            border: 2px solid #000000;
-            border-radius: 4px;
-            font-size: 16px;
-            resize: none;
-        }
-
-        &__msg-area:hover {
-            border-color: #D8B737;
-        }
-
-        &__submit {
-            border-radius: 8px;
-            border: 1px solid transparent;
-            padding: 0.6em 1.2em;
-            font-size: 1em;
-            font-weight: 500;
-            font-family: inherit;
-            background-color: #6B7D7A;
-            cursor: pointer;
-            transition: border-color 0.25s;
-        }
-
-        &__submit:hover {
-            border-color: #D8B737;
-        }
     }
-    
-    .label {
-        padding: 0 2% 0 0;
-        margin: auto 0;    
-    }
+}
 
-    .image-credit {
-        display: flex;
-        justify-content: right;
-    }
+.image-credit {
+    display: flex;
+    justify-content: right;
+}
 </style>
