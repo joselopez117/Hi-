@@ -31,7 +31,7 @@ onMounted(async () => {
                     <router-link to="/" active-class="active-link">Hi!</router-link>
                 </li>
                 <li>
-                    <router-link to="/projects" active-class="active-link">Projects</router-link>
+                    <router-link to="/portfolio" active-class="active-link">Portfolio</router-link>
                 </li>
                 <li>
                     <router-link to="/contact" active-class="active-link">Contact</router-link>
