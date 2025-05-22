@@ -11,7 +11,7 @@ const hiMsg = ref("Hello hello! I'm Jose Lopez")
 const aspirationalRoles = ref("Software Engineer • Machine learning enthusiast")
 const aboutMe = ref('About Me');
 const welcomeMsg = ref("Welcome to my (in progress) professional showcase! I'm a passionate software developer with expertise in crafting innovative solutions across the stack. With experience in frameworks like Vue.js, Knockout.js, and Next.js, coupled with strong back-end skills in C#, Java, and Node.js, I thrive in building seamless, efficient, and user-focused applications.");
-const projects = ref('Projects');
+const imageCredit = ref("Image credit: Etienne Boulanger");
 </script>
 
 <template>
@@ -20,11 +20,10 @@ const projects = ref('Projects');
     <h2>{{ aspirationalRoles }}</h2>
     <h2>{{ aboutMe }}</h2>
     <div class="parent-text__welcomeMsg">{{ welcomeMsg }}</div>
-    <h2>{{ projects }}</h2>
     
     <FidgetButton />
   </div>
-  <a class="image-credit" href="https://stocksnap.io/author/44934">Image credit: Etienne Boulanger</a>
+  <a class="image-credit" href="https://stocksnap.io/author/44934">{{ imageCredit }}</a>
 </template>
 
 <style scoped lang="scss">
