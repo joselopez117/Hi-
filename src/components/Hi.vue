@@ -8,9 +8,10 @@ defineProps<{
  }>()
 
 const hiMsg = ref("Hello hello! I'm Jose Lopez")
-const aspirationalRoles = ref("Software Engineer • Machine learning enthusiast")
+const aspirationalRoles = ref("Software Engineer · Machine Learning Enthusiast")
+const student = ref("M.S. Computer Science student at UT Austin")
 const aboutMe = ref('About Me');
-const welcomeMsg = ref("Welcome to my (in progress) professional showcase! I'm a passionate software developer with expertise in crafting innovative solutions across the stack. With experience in frameworks like Vue.js, Knockout.js, and Next.js, coupled with strong back-end skills in C#, Java, and Node.js, I thrive in building seamless, efficient, and user-focused applications.");
+const welcomeMsg = ref("Welcome to my professional showcase! I'm a passionate software developer and graduate student with expertise in crafting innovative solutions across the stack. With experience in frameworks like Vue.js, Knockout.js, and Next.js, coupled with strong back-end skills in C#, Java, and Node.js, I thrive in building seamless, efficient, and user-focused applications.");
 const imageCredit = ref("Image credit: Etienne Boulanger");
 </script>
 
@@ -19,6 +20,7 @@ const imageCredit = ref("Image credit: Etienne Boulanger");
     <div class="parent-text" :style="{ 'background-image': `url(${imagePath})`}">
       <h1>{{ hiMsg }}</h1>
       <h2>{{ aspirationalRoles }}</h2>
+      <h2>{{ student }}</h2>
       <h2>{{ aboutMe }}</h2>
       <div class="parent-text__welcomeMsg">{{ welcomeMsg }}</div>
       

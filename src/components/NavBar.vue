@@ -44,7 +44,7 @@ onMounted(async () => {
 
 <style scoped lang="scss">
 nav {
-    width: 100%;    
+    width: 98%;    
 }
 
 div {

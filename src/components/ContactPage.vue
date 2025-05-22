@@ -95,24 +95,27 @@ function deliverVistorInfo() {
         width: 100%;
     }
 
-    &__name {
-        width: 100%;
-        max-width: 100%;
-        padding: 0.5rem;
-        border: 2px solid #000;
-        border-radius: 0.5rem;
+
+    &__name,
+    &__msg-area {
+        width: 75%;
+        max-width: 15rem;
+        padding: 0.75rem 1rem;
+        border: none;
+        border-radius: 12px;
+        background-color: rgba(0, 0, 0, 0.5); // <== Soft transparent background
+        color: white;
         font-size: 1rem;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        outline: none;
+        backdrop-filter: blur(4px); // Optional: subtle glass effect
+        transition: border 0.3s ease, background-color 0.3s ease;
     }
 
-    &__msg-area {
-        width: 100%;
-        min-height: 150px;
-        padding: 0.75rem;
-        box-sizing: border-box;
-        border: 2px solid #000;
-        border-radius: 0.5rem;
-        font-size: 1rem;
-        resize: vertical;
+    &__name:focus,
+    &__msg-area:focus {
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 2px solid #D8B737;
     }
 
     &__submit {
