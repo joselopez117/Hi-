@@ -15,15 +15,17 @@ const imageCredit = ref("Image credit: Etienne Boulanger");
 </script>
 
 <template>
-  <div class="parent-text" :style="{ 'background-image': `url(${imagePath})`}">
-    <h1>{{ hiMsg }}</h1>
-    <h2>{{ aspirationalRoles }}</h2>
-    <h2>{{ aboutMe }}</h2>
-    <div class="parent-text__welcomeMsg">{{ welcomeMsg }}</div>
-    
-    <FidgetButton />
+  <div class="page-container">
+    <div class="parent-text" :style="{ 'background-image': `url(${imagePath})`}">
+      <h1>{{ hiMsg }}</h1>
+      <h2>{{ aspirationalRoles }}</h2>
+      <h2>{{ aboutMe }}</h2>
+      <div class="parent-text__welcomeMsg">{{ welcomeMsg }}</div>
+      
+      <FidgetButton />
+    </div>
+    <a class="image-credit" href="https://stocksnap.io/author/44934">{{ imageCredit }}</a>
   </div>
-  <a class="image-credit" href="https://stocksnap.io/author/44934">{{ imageCredit }}</a>
 </template>
 
 <style scoped lang="scss">
@@ -34,15 +36,15 @@ const imageCredit = ref("Image credit: Etienne Boulanger");
   align-items: center;
   text-align: center;
   min-height: 100vh;
-  width: 100%;
   padding: 2rem 1rem;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   border-radius: 1rem;
+  color: #F1F1F1;
 
   h1, h2, .parent-text__welcomeMsg {
-    color: white;
+    color: #F1F1F1;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 
