@@ -30,9 +30,9 @@ onMounted(async () => {
                 <li>
                     <router-link to="/" active-class="active-link">Hi!</router-link>
                 </li>
-                <li>
+                <!-- <li>
                     <router-link to="/portfolio" active-class="active-link">Portfolio</router-link>
-                </li>
+                </li> -->
                 <li>
                     <router-link to="/contact" active-class="active-link">Contact</router-link>
                 </li>
