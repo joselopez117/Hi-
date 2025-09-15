@@ -29,6 +29,8 @@ function deliverVistorInfo() {
             .then(response => {
                 if (response) {
                     responseReturned.value = "Message sent!"
+                    name.value = ''
+                    message.value = ''
                 }
             })
     }
@@ -40,7 +42,7 @@ function deliverVistorInfo() {
         <div class="parent" :style="{ 'background-image': `url(${imagePath})` }">
             <div class="contact-form">
                 <h1>Let's chat!</h1>
-                <form class="form-data" @submit.prevent>
+                <form class="form-data" @submit.prevent="deliverVistorInfo">
                     <div class="form-data__container">
                         <label for="name" class="label">Name:</label>
                         <input class="form-data__name" type="text" id="name" name="name" v-model="name"><br>
@@ -50,7 +52,7 @@ function deliverVistorInfo() {
                         <textarea class="form-data__msg-area" id="message" name="message"
                             v-model="message"></textarea><br>
                     </div>
-                    <input class="form-data__submit" type="submit" value="Submit" @click="deliverVistorInfo">
+                    <input class="form-data__submit" type="submit" value="Submit">
                 </form>
             </div>
             <div class="text-parent">
